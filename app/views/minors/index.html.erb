@@ -1,0 +1,11 @@
+<% City.all.each do |city| %>
+  <h2><%= city.name %></h2>
+  <ul>
+    <% city.faculties.each do |faculty| %>
+      <h3><%= faculty.name %></h3>
+      <% faculty.minors.each do |minor| %>
+        <p><%= minor.title %></p>
+      <% end %>
+    <% end %>
+  </ul>
+<% end %>

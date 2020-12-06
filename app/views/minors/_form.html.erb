@@ -1,0 +1,37 @@
+<%= form_with(model: minor, local: true) do |form| %>
+  <% if minor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(minor.errors.count, "error") %> prohibited this minor from being saved:</h2>
+
+      <ul>
+        <% minor.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :kredits %>
+    <%= form.number_field :kredits %>
+  </div>
+
+  <div class="field">
+    <%= form.label :deskription %>
+    <%= form.text_area :deskription %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,13 @@
+<h1>Welcome#index</h1>
+<p>Find me in app/views/welcome/index.html.erb</p>
+
+<script type="text/javascript">
+  fetch('http://localhost:3000/api/minors')
+  .then(response => response.json())
+  .then(data => {
+    let div = document.createElement('div')
+    div.innerHTML = JSON.stringify(data)
+    console.log(data)
+    document.body.append(div)
+  })
+</script>
